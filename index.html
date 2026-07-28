@@ -12,7 +12,6 @@
             box-sizing: border-box;
         }
         body {
-            /* 全屏背景完整铺满不截断 */
             background-image: url("https://cdn.yiranlaoshi.com/video/1785237961145-壁纸-upscaled.png");
             background-size: cover;
             background-repeat: no-repeat;
@@ -20,6 +19,8 @@
             background-attachment: fixed;
             min-height: 100vh;
             padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
         }
         h1 {
             color: #ffffff;
@@ -27,12 +28,12 @@
             font-size: 44px;
             margin-bottom: 35px;
         }
-        /* 按钮容器，让两个按钮同行居中 */
         .btn-wrap{
             display: flex;
-            gap: 30px; /* 两个按钮之间的间隔 */
+            gap: 30px;
+            justify-content: center;
+            flex: 1;
         }
-        /* 单个银河闪烁按钮外层动画边框 */
         .galaxy-btn{
             position: relative;
             padding: 4px;
@@ -42,13 +43,11 @@
             animation: galaxy-flow 3s linear infinite;
             box-shadow: 0 0 20px #7733ff88, 0 0 40px #00aaff66, 0 0 60px #cc44ff44;
         }
-        /* 按钮内部深色底色 */
         .btn-inner{
             background-color: #0a0a18;
             border-radius: 14px;
             padding: 18px 36px;
         }
-        /* 链接文字样式 */
         .btn-inner a {
             color: #fff;
             font-size: 20px;
@@ -59,30 +58,53 @@
             color: #aaddff;
             text-shadow: 0 0 8px #66ccff;
         }
-        /* 银河流动动画 */
         @keyframes galaxy-flow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        .footer-text{
+            margin-top: 60px;
+            text-align: center;
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+        /* 图片链接专用样式 */
+        .logo-link img{
+            border: none; /* 清除图片默认蓝框 */
+            width: 200px;
+        }
     </style>
 </head>
 <body>
     <h1>哈夫克集团网站导览</h1>
-    <!-- 按钮容器，横向摆放两个独立银河按钮 -->
     <div class="btn-wrap">
-        <!-- 第一个独立银河按钮 -->
         <div class="galaxy-btn">
             <div class="btn-inner">
-                <a href="https://old-six-x.github.io/GFB/">哈夫克集团介绍</a>
+                <a href="https://old-six-x.github.io/GFB/" target="_blank">哈夫克集团介绍</a>
             </div>
         </div>
-        <!-- 第二个独立银河按钮 -->
         <div class="galaxy-btn">
             <div class="btn-inner">
-                <a href="https://link.haavk.space/">哈夫克智能全球加速</a>
+                <a href="https://link.haavk.space/" target="_blank">哈夫克智能全球加速</a>
             </div>
         </div>
+    </div>
+
+    <!-- 图片超链接 示例 -->
+    <div class="logo-link" style="text-align:center;margin-top:50px;">
+        <a href="https://space.bilibili.com/1255142697?spm_id_from=333.337.0.0" target="_blank">
+            <img src="https://cdn.yiranlaoshi.com/video/1785242314044-bilibili.png" alt="bilibili">
+        </a>
+    </div>
+    <div class="logo-link" style="text-align:center;margin-top:50px;">
+        <a href="https://github.com/old-six-x" target="_blank">
+            <img src="https://cdn.yiranlaoshi.com/video/1785242509397-github.png" alt="bilibili">
+        </a>
+    </div>
+    <div class="footer-text">
+        反馈与投诉：lucas_xinshu@163.com  
+        由飞友工作室（Github同昵者）创造
     </div>
 </body>
 </html>
