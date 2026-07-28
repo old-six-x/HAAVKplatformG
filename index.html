@@ -2,49 +2,78 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <!-- 适配手机屏幕 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="faviconHavvk.ico" type="image/x-icon">
     <title>哈夫克集团-网站导览</title>
     <style>
-        /* 重置页面默认边距，铺满全屏 */
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
-            /* 背景图完整铺满全屏 */
+            /* 全屏背景修复，完整铺满不截断 */
             background-image: url("https://cdn.yiranlaoshi.com/video/1785237961145-壁纸-upscaled.png");
-            background-size: cover;       /* 图片完整覆盖屏幕，无留白 */
-            background-repeat: no-repeat; /* 不重复平铺 */
-            background-position: center;  /* 图片居中显示 */
-            background-attachment: fixed; /* 滚动页面背景不动 */
-            min-height: 100vh;            /* 页面高度强制等于屏幕高度，解决只显示一半 */
-            padding: 30px 20px;           /* 文字留出边距，不贴屏幕边缘 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 40px 30px;
         }
-        /* h1 白色加粗 */
         h1 {
             color: #ffffff;
             font-weight: bold;
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 44px;
+            margin-bottom: 35px;
         }
-        /* 导航链接白色，去掉默认蓝色下划线 */
-        a {
+        /* 银河闪烁外框容器 */
+        .galaxy-box {
+            position: relative;
+            padding: 4px;
+            border-radius: 16px;
+            /* 银河多色渐变底色 */
+            background: linear-gradient(45deg, #220044, #440088, #0066cc, #00ccff, #9933ff, #220044);
+            background-size: 400% 400%;
+            /* 流光动画 */
+            animation: galaxy-flow 3s linear infinite;
+            /* 外发光模拟星光闪烁 */
+            box-shadow: 0 0 20px #7733ff88, 0 0 40px #00aaff66, 0 0 60px #cc44ff44;
+        }
+        /* 内部黑色遮罩，隔开渐变边框与文字 */
+        .box-inner {
+            background-color: #0a0a18;
+            border-radius: 14px;
+            padding: 22px 32px;
+        }
+        /* 链接样式 */
+        .box-inner a {
             color: #fff;
             font-size: 20px;
             text-decoration: none;
-            margin-right: 25px;
+            margin: 0 18px;
+            letter-spacing: 1px;
         }
-        /* 鼠标悬浮链接变浅灰，提升交互 */
-        a:hover {
-            color: #cccccc;
+        .box-inner a:hover {
+            color: #aaddff;
+            text-shadow: 0 0 8px #66ccff;
+        }
+        /* 银河流光动画 */
+        @keyframes galaxy-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
     <h1>哈夫克集团网站导览</h1>
-    <a href="https://old-six-x.github.io/GFB/">哈夫克集团介绍</a>
-    <a href="https://link.haavk.space/">哈夫克智能全球加速</a>
+    <!-- 银河闪烁边框容器 -->
+    <div class="galaxy-box">
+        <div class="box-inner">
+            <a href="https://old-six-x.github.io/GFB/">哈夫克集团介绍</a>
+            <a href="https://link.haavk.space/">哈夫克智能全球加速</a>
+        </div>
+    </div>
 </body>
 </html>
