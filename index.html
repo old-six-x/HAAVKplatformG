@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
         body {
-            /* 全屏背景修复，完整铺满不截断 */
+            /* 全屏背景完整铺满不截断 */
             background-image: url("https://cdn.yiranlaoshi.com/video/1785237961145-壁纸-upscaled.png");
             background-size: cover;
             background-repeat: no-repeat;
@@ -27,38 +27,39 @@
             font-size: 44px;
             margin-bottom: 35px;
         }
-        /* 银河闪烁外框容器 */
-        .galaxy-box {
+        /* 按钮容器，让两个按钮同行居中 */
+        .btn-wrap{
+            display: flex;
+            gap: 30px; /* 两个按钮之间的间隔 */
+        }
+        /* 单个银河闪烁按钮外层动画边框 */
+        .galaxy-btn{
             position: relative;
             padding: 4px;
             border-radius: 16px;
-            /* 银河多色渐变底色 */
             background: linear-gradient(45deg, #220044, #440088, #0066cc, #00ccff, #9933ff, #220044);
             background-size: 400% 400%;
-            /* 流光动画 */
             animation: galaxy-flow 3s linear infinite;
-            /* 外发光模拟星光闪烁 */
             box-shadow: 0 0 20px #7733ff88, 0 0 40px #00aaff66, 0 0 60px #cc44ff44;
         }
-        /* 内部黑色遮罩，隔开渐变边框与文字 */
-        .box-inner {
+        /* 按钮内部深色底色 */
+        .btn-inner{
             background-color: #0a0a18;
             border-radius: 14px;
-            padding: 22px 32px;
+            padding: 18px 36px;
         }
-        /* 链接样式 */
-        .box-inner a {
+        /* 链接文字样式 */
+        .btn-inner a {
             color: #fff;
             font-size: 20px;
             text-decoration: none;
-            margin: 0 18px;
             letter-spacing: 1px;
         }
-        .box-inner a:hover {
+        .btn-inner a:hover {
             color: #aaddff;
             text-shadow: 0 0 8px #66ccff;
         }
-        /* 银河流光动画 */
+        /* 银河流动动画 */
         @keyframes galaxy-flow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -68,11 +69,19 @@
 </head>
 <body>
     <h1>哈夫克集团网站导览</h1>
-    <!-- 银河闪烁边框容器 -->
-    <div class="galaxy-box">
-        <div class="box-inner">
-            <a href="https://old-six-x.github.io/GFB/">哈夫克集团介绍</a>
-            <a href="https://link.haavk.space/">哈夫克智能全球加速</a>
+    <!-- 按钮容器，横向摆放两个独立银河按钮 -->
+    <div class="btn-wrap">
+        <!-- 第一个独立银河按钮 -->
+        <div class="galaxy-btn">
+            <div class="btn-inner">
+                <a href="https://old-six-x.github.io/GFB/">哈夫克集团介绍</a>
+            </div>
+        </div>
+        <!-- 第二个独立银河按钮 -->
+        <div class="galaxy-btn">
+            <div class="btn-inner">
+                <a href="https://link.haavk.space/">哈夫克智能全球加速</a>
+            </div>
         </div>
     </div>
 </body>
